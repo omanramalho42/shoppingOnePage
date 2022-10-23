@@ -5,6 +5,7 @@ module.exports = {
     "./src/components/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
+    mode: 'jit',
     extend: {},
     screens: {
       'xl': {'max': '1200px'},
@@ -12,7 +13,7 @@ module.exports = {
       'md': {'max': '767px'},
       'sm': {'max': '550px'},
       'xsm': {'max': '375px'},
-    }
+    },
   },
   plugins: [],
 }

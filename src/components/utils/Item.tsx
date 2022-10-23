@@ -41,6 +41,21 @@ const Item = ({ ifExists, item: { id, btn, color, shadow, img, price, rating, ti
   
   return (
     <>
+    {/* from-sky-600 to-indigo-600 */}
+    {/* from-orange-500 to-amber-500 */}
+    {/* from-red-500 to-rose-500  */}
+    {/* from-green-500 to-emerald-500 */}
+    {/* from-gray-900 to-yellow-500 */}
+    {/* from-yellow-500 to-yellow-500 */}
+    {/* from-blue-500 to-cyan-500  */}
+    {/* from-[#936550] to-orange-900 */}
+    {/* from-indigo-700 to-indigo-700 */}
+    {/* bg-gradient-to-b from-green-600 */}
+    {/*  bg-gradient-to-b from-slate-900 */}
+      {/* from-blue-900 to-blue-500 */}
+      {/* from-blue-600 to-blue-500 */}
+      {/* from-red-500 to-rose-500  */}
+      {/* from-violet-500 to-indigo-500  */}
       <div
         className={`relative bg-gradient-to-b ${color} ${shadow} grid items-center ${
           ifExists ? "justify-items-start" : "justify-items-center"
