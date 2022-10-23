@@ -3,9 +3,11 @@ import React, { useState, useEffect } from 'react'
 
 import { 
   FlexContent,
+  Footer,
   Hero,
   Layout,
   Loading, 
+  Navbar, 
   Sales,
   Stories
 } from '../components'
@@ -20,22 +22,26 @@ const Home: NextPage = () => {
   },[]);
 
   return (
-    <Layout title='Home' description='Página inicial'>
-      {load ? (
-        <Loading />
-      ) : (
-        <>
-          <Hero 
-            heroapi={heroapi}
-          />
-          <FlexContent data={highlight} ifExists />
-          <Sales data={popularsales} ifExists />
-          <Sales data={toprateslaes} />
-          <FlexContent data={sneaker} />
-          <Stories story={story} />
-        </>
-      )}
-    </Layout>
+    <>
+      <Navbar />
+      <Layout title='Home' description='Página inicial'>
+        {load ? (
+          <Loading />
+        ) : (
+          <>
+            <Hero 
+              heroapi={heroapi}
+              />
+            <FlexContent data={highlight} ifExists />
+            <Sales data={popularsales} ifExists />
+            <Sales data={toprateslaes} />
+            <FlexContent data={sneaker} />
+            <Stories story={story} />
+            <Footer data={footerAPI} />
+          </>
+        )}
+      </Layout>
+    </>
   )
 }
 
