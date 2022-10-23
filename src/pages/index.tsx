@@ -8,13 +8,13 @@ import {
 } from '../components'
 
 const Home: NextPage = () => {
-  const [load, setLoad] = useState<boolean | null>(true);
-  useEffect(() => { setLoad(true) },[])
-  useEffect(() => {
-    setTimeout(() => { 
-      setLoad((value) => !value)
-    }, 1200)
-  },[]);
+  const [load, setLoad] = useState<boolean>(false);
+  useEffect(() => { setLoad(false) },[])
+  // useEffect(() => {
+  //   setTimeout(() => { 
+  //     setLoad((value) => !value)
+  //   }, 1200)
+  // },[]);
 
   return (
     <Layout title='Home' description='Página inicial'>
@@ -23,7 +23,12 @@ const Home: NextPage = () => {
       ) : (
         <>
           <h1>oi 🔥</h1>
-          <Hero />
+          <Hero 
+            btntext='Explore Product' 
+            subtitle='Adapt 2.0 Sneackers' 
+            title='Play With Eletric Nike' 
+            img='https://www.pngmart.com/files/15/Apple-iPhone-11-PNG-Pic.png' 
+          />
         </>
       )}
     </Layout>
