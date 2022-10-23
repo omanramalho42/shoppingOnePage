@@ -1,4 +1,4 @@
-import CartCount from './cartCount'
+import CartCount from './CartCount'
 import CartEmpty from './CartEmpty'
 import CartItem from './CartItem'
 

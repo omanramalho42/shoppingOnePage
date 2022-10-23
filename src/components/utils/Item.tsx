@@ -4,7 +4,7 @@ import Image from 'next/image'
 
 import { ShoppingBagIcon, StarIcon } from '@heroicons/react/24/solid'
 import { useDispatch } from 'react-redux';
-import { setAddItemToCart } from '../../app/CartSlice';
+import { setAddItemToCart, setOpenCart } from '../../app/CartSlice';
 
 interface ItemProps {
   ifExists: boolean;
@@ -32,6 +32,12 @@ const Item = ({ ifExists, item: { id, btn, color, shadow, img, price, rating, ti
     const item =  { id, title, text, img, color, shadow , price };
     disptach(setAddItemToCart(item));
   }
+
+  const onCartToggle = () => {
+    disptach(setOpenCart({
+        cartState: true
+    }))
+  }
   
   return (
     <>
@@ -53,7 +59,7 @@ const Item = ({ ifExists, item: { id, btn, color, shadow, img, price, rating, ti
           </p>
 
           <div className="flex items-center justify-between w-28 my-2">
-            <div className="flex items-center bg-white/80  px-1 rounded blur-effect-theme">
+            <div className="flex items-center bg-white/80 px-1 rounded blur-effect-theme">
               <h1 className="text-black text-sm font-medium">${price}</h1>
             </div>
             <div className="flex items-center gap-1">
@@ -75,7 +81,7 @@ const Item = ({ ifExists, item: { id, btn, color, shadow, img, price, rating, ti
             <button
               type="button"
               className="bg-white/90 blur-effect-theme button-theme px-2 py-1 shadow shadow-sky-200 text-sm text-black"
-              // onClick={()=> onAddToCart()}
+              onClick={()=> {onAddToCart(); onCartToggle()}}
             >
               { btn }
             </button>
