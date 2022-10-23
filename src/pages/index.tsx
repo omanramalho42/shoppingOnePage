@@ -7,6 +7,8 @@ import {
   Loading 
 } from '../components'
 
+import { heroapi, popularsales, toprateslaes, highlight, sneaker, story, footerAPI } from '../data/data';
+
 const Home: NextPage = () => {
   const [load, setLoad] = useState<boolean>(false);
   useEffect(() => { setLoad(false) },[])
@@ -23,10 +25,7 @@ const Home: NextPage = () => {
       ) : (
         <>
           <Hero 
-            btntext='Explore Product' 
-            subtitle='Adapt 2.0 Sneackers' 
-            title='Play With Eletric Nike' 
-            img='https://www.pngmart.com/files/15/Apple-iPhone-11-PNG-Pic.png' 
+            heroapi={heroapi}
           />
         </>
       )}
