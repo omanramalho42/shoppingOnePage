@@ -1,23 +1,29 @@
-import { MinusIcon, PlusIcon, TrashIcon } from '@heroicons/react/24/solid'
 import React from 'react'
+import Image from 'next/image'
+
+import { MinusIcon, PlusIcon, TrashIcon } from '@heroicons/react/24/solid'
 
 interface CardItemProps {
-  id: string;
-  color: string;
-  shadow: string;
-  title: string;
-  text: string;
-  img: any;
-  price: number;
-  cartQuantity: number;
+  item: {
+    id: string;
+    color: string;
+    shadow: string;
+    title: string;
+    text: string;
+    img: any;
+    price: number;
+    cartQuantity: number;
+  }
 }
 
-const CartItem = ({ id, color, shadow, img, title, text, price, cartQuantity }: CardItemProps ) => {
+const CartItem = ({ item: {id, color, shadow, img, title, text, price, cartQuantity} }: CardItemProps ) => {
   return (
     <div className="flex items-center justify-between w-full px-5">
       <div className="flex items-center gap-5">
         <div className={`bg-gradient-to-b ${color} ${shadow} relative rounded p-3 hover:scale-105 transition-all duration-75 ease-in-out grid items-center`}>
-          <img src={img} alt={`img/cart-item/${id}`} className="w-36 h-auto object-fill lg:w-28" />
+          <div className='w-36 h-auto object-fill lg:w-28'>
+            <Image src={img} alt={`img/cart-item/${id}`} className="" />
+          </div>
           <div className='absolute right-1 top-1 blur-theme-effect bg-white/80 text-black text-xs px-1 rounded'>
             ${ price }
           </div>

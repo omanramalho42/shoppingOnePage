@@ -14,7 +14,7 @@ const Navbar = () => {
   const dispatch = useDispatch();
   const onCartToggle = () => {
     dispatch(setOpenCart({
-      cartState: true
+        cartState: true
     }))
   }
 
@@ -56,7 +56,7 @@ const Navbar = () => {
             />
           </li>
           <li className='grid items-center'>
-            <button type='button' onClick={() => onCartToggle} className='border-none outline-none active:scale-110 transition-all duration-300 relative'>
+            <button type='button' onClick={onCartToggle} className='border-none outline-none active:scale-110 transition-all duration-300 relative'>
               <ShoppingBagIcon 
                 className={`icon-style ${navState && "filter brightness-0"}`} 
               />

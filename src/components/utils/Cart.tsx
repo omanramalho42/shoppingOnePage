@@ -1,6 +1,6 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux';
-import { selectCartState, setCloseCart } from '../../app/CartSlice';
+import { selectCartItems, selectCartState, setCloseCart } from '../../app/CartSlice';
 
 import { 
   CartItem, 
@@ -11,18 +11,32 @@ import {
 const Cart = () => {
   const dispatch = useDispatch();
   const ifCartState = useSelector(selectCartState);
+  const cartItems: any = useSelector(selectCartItems);
+
+  console.log({ cartItems });
 
   const onCartToggle = () => {
-    dispatch(setCloseCart({
-      cartState: false
-    }))
-  }
+    dispatch(
+      setCloseCart({
+        cartState: false,
+      })
+    );
+  };
+  
   return (
     <div className={`fixed top-0 left-0 right-0 bottom-0 blur-effect-theme duration-500 w-full h-screen opacity-100 z-[250] ${ifCartState ? 'opacity-100 visible translate-x-0' : 'opacity-0 invisible translate-x-8'}`}>
       <div className='blur-effect-theme duration-500 h-screen max-w-xl w-full absolute right-0'>
         <CartCount totalQTY={''} onCartToggle={onCartToggle} onClearCartItems={() => {}} />
         {/* <CartItem />*/}
-        <CartEmpty onCartToggle={() => {}} /> 
+        {cartItems?.length === 0 ? (
+          <CartEmpty onCartToggle={() => {}} />
+        ) : (
+          <div>
+            {cartItems?.map((item: any, i: number) => (
+              <CartItem key={i} item={item} />
+            ))}
+          </div>
+        )}
       </div>
 
       <div className="fixed bottom-0 bg-white w-full px-5 py-2 grid items-center">
