@@ -25,7 +25,6 @@ import product10 from "../assets/product10.png"
 import product11 from "../assets/product11.png"
 import product12 from "../assets/product12.png"
 
-
 import facebook from "../assets/facebook.svg"
 import instagram from "../assets/instagram.svg"
 import twitter from "../assets/twitter.svg"
@@ -38,9 +37,9 @@ const heroapi = {
   img: heroimg,
   btntext: "Explore Product",
   videos: [
-    { imgsrc: vcover1, clip: clip },
-    { imgsrc: vcover2, clip: clip },
-    { imgsrc: vcover3, clip: clip },
+    { imgsrc: vcover1, clip: 'clip' },
+    { imgsrc: vcover2, clip: 'clip' },
+    { imgsrc: vcover3, clip: 'clip' },
   ],
   sociallinks: [
     { icon: facebook },

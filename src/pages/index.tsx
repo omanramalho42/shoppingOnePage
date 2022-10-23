@@ -11,7 +11,10 @@ import { heroapi, popularsales, toprateslaes, highlight, sneaker, story, footerA
 
 const Home: NextPage = () => {
   const [load, setLoad] = useState<boolean>(false);
-  useEffect(() => { setLoad(false) },[])
+  useEffect(() => { 
+    setLoad(false)
+    console.log({ heroapi },'api'); 
+  },[])
   // useEffect(() => {
   //   setTimeout(() => { 
   //     setLoad((value) => !value)
