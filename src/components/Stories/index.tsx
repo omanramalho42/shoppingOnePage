@@ -7,6 +7,7 @@ import Title from "../utils/Title"
 import { truncate } from "lodash"
 
 import Image from 'next/image'
+import Link from "next/link"
 
 interface StoriesProps {
   story: {
@@ -76,7 +77,7 @@ const Stories = ({ story: { title, news } }: StoriesProps) => {
                     <p className="text-sm text-justify lg:text-xs">{truncate(val.text, {length: 175})}</p>
                   </div>
                   <div className="flex items-center justify-center px-4 w-full">
-                    {/* <a 
+                    <Link 
                       href={val.url} 
                       target="_blank" 
                       rel="noopener noreferrer" 
@@ -84,7 +85,7 @@ const Stories = ({ story: { title, news } }: StoriesProps) => {
                       className="w-full bg-gradient-to-b from-slate-900 to-black shadow-md shadow-black text-center text-slate-100 py-1.5 button-theme"
                     >
                       { val.btn }
-                    </a> */}
+                    </Link>
                   </div>
                 </div>
               </SplideSlide>
