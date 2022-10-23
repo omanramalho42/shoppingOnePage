@@ -22,7 +22,6 @@ const Home: NextPage = () => {
         <Loading />
       ) : (
         <>
-          <h1>oi 🔥</h1>
           <Hero 
             btntext='Explore Product' 
             subtitle='Adapt 2.0 Sneackers' 
