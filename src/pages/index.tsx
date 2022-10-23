@@ -11,6 +11,7 @@ import {
   Sales,
   Stories
 } from '../components'
+import Cart from '../components/utils/Cart';
 
 import { heroapi, popularsales, toprateslaes, highlight, sneaker, story, footerAPI } from '../data/data';
 
@@ -24,6 +25,7 @@ const Home: NextPage = () => {
   return (
     <>
       <Navbar />
+      <Cart />
       <Layout title='Home' description='Página inicial'>
         {load ? (
           <Loading />
