@@ -2,10 +2,12 @@ import type { NextPage } from 'next'
 import React, { useState, useEffect } from 'react'
 
 import { 
+  FlexContent,
   Hero,
   Layout,
   Loading, 
-  Sales
+  Sales,
+  Stories
 } from '../components'
 
 import { heroapi, popularsales, toprateslaes, highlight, sneaker, story, footerAPI } from '../data/data';
@@ -23,13 +25,14 @@ const Home: NextPage = () => {
         <Loading />
       ) : (
         <>
-          <div className='mb-80'>
-            <Hero 
-              heroapi={heroapi}
-            />
-          </div>
+          <Hero 
+            heroapi={heroapi}
+          />
+          <FlexContent data={highlight} ifExists />
           <Sales data={popularsales} ifExists />
           <Sales data={toprateslaes} />
+          <FlexContent data={sneaker} />
+          <Stories story={story} />
         </>
       )}
     </Layout>

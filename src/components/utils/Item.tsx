@@ -24,7 +24,7 @@ interface ItemProps {
   }
 }
 const Item = ({ ifExists, item: { id, btn, color, shadow, img, price, rating, title, text } }: ItemProps) => {
-  useEffect(() => {console.log({ color })},[]);
+  useEffect(() => {console.log({color})},[]);
   return (
     <>
       <div
