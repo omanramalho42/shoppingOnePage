@@ -14,13 +14,8 @@ const Home: NextPage = () => {
   const [load, setLoad] = useState<boolean>(false);
   useEffect(() => { 
     setLoad(false)
-    console.log({ popularsales },'api'); 
-  },[])
-  // useEffect(() => {
-  //   setTimeout(() => { 
-  //     setLoad((value) => !value)
-  //   }, 1200)
-  // },[]);
+    console.log({ popularsales, toprateslaes },'api'); 
+  },[]);
 
   return (
     <Layout title='Home' description='Página inicial'>
@@ -28,10 +23,12 @@ const Home: NextPage = () => {
         <Loading />
       ) : (
         <>
-          <Hero 
-            heroapi={heroapi}
-          />
-          <Sales data={popularsales} />
+          <div className='mb-80'>
+            <Hero 
+              heroapi={heroapi}
+            />
+          </div>
+          <Sales data={popularsales} ifExists />
           <Sales data={toprateslaes} />
         </>
       )}

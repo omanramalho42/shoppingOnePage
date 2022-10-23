@@ -15,7 +15,7 @@ const Layout = ({ title, description, children }: LayoutProps) => {
         <title>justay shop - { title }</title>
         <meta name="description" content={description} />
       </Head>
-      <main>
+      <main className='flex flex-col gap-16 relative'>
         { children }
       </main>
     </>
