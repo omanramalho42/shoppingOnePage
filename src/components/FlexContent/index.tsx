@@ -1,6 +1,6 @@
 import React from 'react'
 import Image from 'next/image'
-import Link from 'next/link';
+import Link from 'next/link'
 
 interface FlexContextProps {
   ifExists?: boolean;
@@ -14,15 +14,30 @@ interface FlexContextProps {
   }
 }
 
-const FlexContent = ({ ifExists = false, data: { title, heading, text, img, btn, url } }: FlexContextProps) => {
+const FlexContent = ({ 
+  ifExists = false,
+  data: { title, heading, text, img, btn, url } 
+} : FlexContextProps ) => {
   return (
    <>
       <div className={`shop-container flex p-16 items-center justify-between lg:flex-col lg:justify-center nike-container ${ifExists ? 'flex-row-reverse' : 'flex-row'}`}>
         <div className='max-w-lg lg:max-w-none w-full md:text-center grid items-center lg:justify-items-center'>
-          <h1 className='text-4xl sm:text-3xl font-bold text-gradient'>{heading}</h1>
-          <h1 className='text-5xl lg:text-4xl md:text-3xl sm:text-2xl font-bold text-slate-900 filter drop-shadow-lg'>{title}</h1>
-          <p className='xl:text-sm my-4 text-slate-900'>{text}</p>
-          <Link href={url} className="flex items-center" target={"_blank"} role="button">
+          <h1 className='text-4xl sm:text-3xl font-bold text-gradient'>
+            { heading }
+          </h1>
+          <h1 className='text-5xl lg:text-4xl md:text-3xl sm:text-2xl font-bold text-slate-900 filter drop-shadow-lg'>
+            { title }
+          </h1>
+          <p className='xl:text-sm my-4 text-slate-900'>
+            { text }
+          </p>
+          <Link 
+            href={url} 
+            className="flex items-center" 
+            target={"_blank"} 
+            role="button"
+            rel="noopener noreferrer"
+          >
             <button 
               type='button' 
               className='button-theme bg-slate-900 shadow-slate-900 text-slate-100 py-1.5'
