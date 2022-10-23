@@ -4,7 +4,8 @@ import React, { useState, useEffect } from 'react'
 import { 
   Hero,
   Layout,
-  Loading 
+  Loading, 
+  Sales
 } from '../components'
 
 import { heroapi, popularsales, toprateslaes, highlight, sneaker, story, footerAPI } from '../data/data';
@@ -13,7 +14,7 @@ const Home: NextPage = () => {
   const [load, setLoad] = useState<boolean>(false);
   useEffect(() => { 
     setLoad(false)
-    console.log({ heroapi },'api'); 
+    console.log({ popularsales },'api'); 
   },[])
   // useEffect(() => {
   //   setTimeout(() => { 
@@ -30,6 +31,8 @@ const Home: NextPage = () => {
           <Hero 
             heroapi={heroapi}
           />
+          <Sales data={popularsales} />
+          <Sales data={toprateslaes} />
         </>
       )}
     </Layout>
