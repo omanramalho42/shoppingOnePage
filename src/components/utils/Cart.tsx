@@ -1,6 +1,14 @@
-import React, { useEffect } from 'react'
-import { useDispatch, useSelector } from 'react-redux';
-import { selectCartItems, selectCartState, selectTotalAmount, selectTotalQTY, setClearCartItems, setCloseCart, setGetTotals } from '../../app/CartSlice';
+import React from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { 
+  selectCartItems, 
+  selectCartState, 
+  selectTotalAmount, 
+  selectTotalQTY, 
+  setClearCartItems, 
+  setCloseCart, 
+  setGetTotals 
+} from '../../app/CartSlice'
 
 import { 
   CartItem, 
@@ -40,7 +48,7 @@ const Cart = () => {
             : "opacity-0 invisible translate-x-8"
         }`}
       >
-        <CartCount totalQTY={totalQTY} onCartToggle={onCartToggle} onClearCartItems={() => {}} />
+        <CartCount totalQTY={cartItems?.length} onCartToggle={onCartToggle} onClearCartItems={() => {}} />
         {cartItems?.length === 0 ? (
           <CartEmpty onCartToggle={onCartToggle} />
         ) : (
